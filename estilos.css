@@ -1,0 +1,275 @@
+
+/* ===================================
+   XBOX SERIES X - SCROLLYTELLING
+   DISEÑO GENERAL
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080c09;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ===================================
+   SECCIONES
+=================================== */
+
+.section {
+    min-height: 100vh;
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenido {
+    width: 52%;
+    position: relative;
+    z-index: 2;
+}
+
+.imagen {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.imagen img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+/* ===================================
+   TEXTOS
+=================================== */
+
+.etiqueta {
+    display: inline-block;
+    color: #9bf26b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(48px, 6vw, 90px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(30px, 3.5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #c5d0c7;
+    margin-bottom: 22px;
+    max-width: 600px;
+}
+
+/* ===================================
+   BOTONES
+=================================== */
+
+.boton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 30px;
+    background: #107c10;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.boton:hover {
+    background: #159b15;
+    transform: translateY(-4px);
+}
+
+.boton:focus-visible {
+    outline: 3px solid #9bf26b;
+    outline-offset: 4px;
+}
+
+/* ===================================
+   SECCIÓN 1: PRESENTACIÓN
+=================================== */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            #16451d 0%,
+            #080c09 60%
+        );
+}
+
+.hero h1 {
+    color: #ffffff;
+}
+
+.hero h2 {
+    color: #9bf26b;
+}
+
+/* ===================================
+   SECCIÓN 2: TECNOLOGÍA
+=================================== */
+
+.tecnologia {
+    background:
+        linear-gradient(
+            135deg,
+            #111b14,
+            #050805
+        );
+}
+
+.tecnologia h2 {
+    color: #9bf26b;
+}
+
+.caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.caracteristica {
+    background: rgba(16, 124, 16, 0.15);
+    border: 1px solid rgba(155, 242, 107, 0.3);
+    border-radius: 10px;
+    padding: 18px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ===================================
+   SECCIÓN 3: EXPERIENCIA
+=================================== */
+
+.experiencia {
+    background:
+        radial-gradient(
+            circle at 25% 50%,
+            #173d22,
+            #080c09 65%
+        );
+}
+
+.experiencia h2 {
+    color: #9bf26b;
+}
+
+/* ===================================
+   DISEÑO RESPONSIVE
+=================================== */
+
+@media (max-width: 768px) {
+
+    .section {
+        min-height: 100vh;
+        padding: 80px 6%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .contenido,
+    .imagen {
+        width: 100%;
+    }
+
+    .contenido {
+        text-align: center;
+    }
+
+    p {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15px;
+    }
+
+    .imagen img {
+        max-width: 350px;
+        max-height: 38vh;
+    }
+
+    .caracteristicas {
+        gap: 10px;
+    }
+
+    .caracteristica {
+        padding: 14px 8px;
+        font-size: 13px;
+    }
+
+    .etiqueta {
+        font-size: 11px;
+    }
+}
+
+/* ===================================
+   ACCESIBILIDAD
+=================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .boton {
+        transition: none;
+    }
+}
+
+/* TÍTULOS DE LAS CARACTERÍSTICAS */
+
+.caracteristica h3 {
+    color: #9bf26b;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* DESCRIPCIONES EN ESPAÑOL */
+
+.caracteristica span {
+    display: block;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
